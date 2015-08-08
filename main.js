@@ -50,6 +50,14 @@ app.use(function(req, res, next){
 	res.send(200);
 });
 
+//I'm listening
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
+
 function sendToSlack (body, channel){
 	//get the appropriate params loaded up for request
 	var options = { method: 'POST',
