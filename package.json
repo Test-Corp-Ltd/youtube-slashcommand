@@ -5,6 +5,8 @@
   "main": "main.js",
   "dependencies": {
     "express": "^4.13.3",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "passport-slack": "^0.0.3",
     "request": "^2.60.0",
     "youtube-search": "^1.0.4"
