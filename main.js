@@ -32,7 +32,7 @@ app.use(function(req, res, next){
 	var searchTerms = req.body.text;
 	var channel = req.body.channel;
 
-	console.log(searchTerms); //some testingss
+	console.log(searchTerms); //some testingssdd
 
 	//search that shit
 	search(searchText, opts, function(err, results) {
