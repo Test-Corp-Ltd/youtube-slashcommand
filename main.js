@@ -12,7 +12,7 @@ var slackToken = '[your token]';
 //optional parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
+  key: '[your key]'
 };
 
 /*
