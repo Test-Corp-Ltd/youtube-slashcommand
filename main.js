@@ -6,13 +6,13 @@ var express = require('express');
 var app = express();
 
 //will need a Slack token - put it here
-var slackToken = '[your token]';
+var slackToken = 'xoxb-6976337734-3cxWlNe9g76eQjSe8wWRBuYz';
 
 
 //optional parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: '[your key]'
+  key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
 };
 
 /*
@@ -24,6 +24,7 @@ app.post('/', function(req, res){
 	//grab useful things from request
 	var searchTerms = req.query.text;
 	var channel = req.query.channel;
+	var token = 
 
 	console.log('search terms received: '+ channel); //some testings
 
