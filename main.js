@@ -25,13 +25,17 @@ app.post('/', function(req, res){
 	var searchTerms = req.query.text;
 	var channel = req.query.channel;
 
+	//check Slack token
+	if (req.query.token !== slackToken) {
+    return res.sendStatus(403);
+  }
 	console.log('search terms received: '+ channel); //some testings
 
 	//search that shit
 	search(searchTerms, opts, function(err, results) {
   		if(err){
   			return console.log(err);
-  			res.send(500);
+  			res.sendStatus(500);
   		} 
  		
  		//print search results to log if no error
@@ -44,12 +48,7 @@ app.post('/', function(req, res){
 });
 
 //I'm listening
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Example app listening at http://%s:%s', host, port);
-});
+var server = app.listen(3000);
 
 //sends request to Slack's postMessage method
 function sendToSlack (text, channel){
