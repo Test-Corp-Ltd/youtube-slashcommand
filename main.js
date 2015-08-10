@@ -35,8 +35,8 @@ app.post('/', function(req, res){
 	//search that shit
 	search(searchTerms, opts, function(err, results) {
   		if(err){
-  			return console.log(err);
-  			res.sendStatus(500);
+  			console.log(err);
+  			return res.sendStatus(500);
   		} 
  		
  		//print search results to log if no error
