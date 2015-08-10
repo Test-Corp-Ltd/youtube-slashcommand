@@ -49,7 +49,7 @@ app.post('/', function(req, res){
 });
 
 //I'm listening
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 //sends request to Slack's postMessage method
 function sendToSlack (text, channel){
