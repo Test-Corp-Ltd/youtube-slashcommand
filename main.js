@@ -5,23 +5,18 @@ var express = require('express');
 
 var app = express();
 
-//Slack API token - put it here
-var slackApiToken = 'xoxb-6976337734-3cxWlNe9g76eQjSe8wWRBuYz';
+//incoming webhook URL - put it here
 var incWebhook = 'https://hooks.slack.com/services/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';
 
-//Slack slach command token - put it here
+//Slack slash command token - put it here
 var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
 
-//optional parameters (AND API KEY) for the youtube search request
+//parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
   key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
 };
 
-/*
-this will handle all requests - can build out later to provide different functionality via
-different mounts
-*/
 app.post('/', function(req, res){
 
 	//grab useful things from request
