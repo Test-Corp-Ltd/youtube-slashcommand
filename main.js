@@ -5,9 +5,12 @@ var express = require('express');
 
 var app = express();
 
-//will need a Slack token - put it here
-var slackToken = 'xoxb-6976337734-3cxWlNe9g76eQjSe8wWRBuYz';
+//Slack API token - put it here
+var slackApiToken = 'xoxb-6976337734-3cxWlNe9g76eQjSe8wWRBuYz';
 
+
+//Slack slach command token - put it here
+var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
 
 //optional parameters (AND API KEY) for the youtube search request
 var opts = {
@@ -25,11 +28,14 @@ app.post('/', function(req, res){
 	var searchTerms = req.query.text;
 	var channel = req.query.channel;
 
-	//check Slack token
-	if (req.query.token !== slackToken) {
-    return res.sendStatus(403);
-  }
-	console.log('search terms received: '+ channel); //some testings
+	//check Slash Command token
+	if (req.query.token !== slashCommandToken) {
+    	return res.sendStatus(403);
+  	}
+
+  	//some testings
+	console.log('search terms received: '+ searchTerms); 
+	console.log('channel received: '+ channel);
 
 	//search that shit
 	search(searchTerms, opts, function(err, results) {
@@ -48,7 +54,7 @@ app.post('/', function(req, res){
 });
 
 //I'm listening
-var server = app.listen(3000);
+app.listen(3000);
 
 //sends request to Slack's postMessage method
 function sendToSlack (text, channel){
@@ -60,7 +66,7 @@ function sendToSlack (text, channel){
   		headers: { 'content-type': 'multipart/form-data; boundary=---011000010111000001101001' },
   		formData: 
    			{ 
-   				token: slackToken,
+   				token: slackApiToken,
      	  		channel: channel,
      	  		text: text,
      	  		username: 'YouTubeBot' 
