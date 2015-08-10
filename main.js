@@ -7,7 +7,7 @@ var app = express();
 
 //Slack API token - put it here
 var slackApiToken = 'xoxb-6976337734-3cxWlNe9g76eQjSe8wWRBuYz';
-
+var incWebhook = 'https://hooks.slack.com/services/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';
 
 //Slack slach command token - put it here
 var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
@@ -62,14 +62,11 @@ function sendToSlack (text, channel){
 
 	//get the appropriate params loaded up for request
 	var options = { method: 'POST',
-  		url: 'https://slack.com/api/chat.postMessage',
+  		url: incWebhook,
   		headers: { 'content-type': 'multipart/form-data; boundary=---011000010111000001101001' },
   		formData: 
    			{ 
-   				token: slackApiToken,
-     	  		channel: channel,
-     	  		text: text,
-     	  		username: 'YouTubeBot' 
+     	  		payload: '{"text":"'+text+'","channel":"'+channel+'"}',
      	  	} 
      	};
 
