@@ -24,7 +24,6 @@ app.post('/', function(req, res){
 	//grab useful things from request
 	var searchTerms = req.query.text;
 	var channel = req.query.channel;
-	var token = 
 
 	console.log('search terms received: '+ channel); //some testings
 
@@ -36,7 +35,7 @@ app.post('/', function(req, res){
   		} 
  		
  		//print search results to log if no error
-  		console.log('Here are the results from YouTube:'results);
+  		console.log('Here are the results from YouTube:'+ results);
   		sendToSlack(results[0].link, channel);
 	});
 
@@ -63,7 +62,7 @@ function sendToSlack (text, channel){
   		formData: 
    			{ 
    				token: slackToken,
-     	  		channel: '#'+channel,
+     	  		channel: channel,
      	  		text: text,
      	  		username: 'YouTubeBot' 
      	  	} 
