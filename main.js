@@ -3,28 +3,33 @@ var passport = require('passport-slack');
 var search = require('youtube-search');
 var express = require('express');
 
+
 var app = express();
 
+//TO-DO: need to use multiparty module to process Slash command post
+
 //incoming webhook URL - put it here
-var incWebhook = 'https://hooks.slack.com/services/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';
+var incWebhook = '[your URL here]';
 
 //Slack slash command token - put it here
-var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
+var slashCommandToken = '[your team token here]]';
 
 //parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
+  key: 'your youtube API key here'
 };
 
 app.post('/', function(req, res){
 
 	//grab useful things from request
-	var searchTerms = req.body.text;
-	var channel = req.body.channel;
+	var searchTerms = req.query.text;
+	var channel = req.query.channel;
+
+	console.log('token: '+ req.body.token);
 
 	//check Slash Command token
-	if (req.body.token !== slashCommandToken) {
+	if (req.query.token !== slashCommandToken) {
     	return res.sendStatus(403);
   	}
 
