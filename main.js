@@ -27,13 +27,13 @@ var opts = {
 app.post('/', function(req, res){
 
 	//grab useful things from request
-	var searchTerms = req.query.text;
-	var channel = req.query.channel;
+	var searchTerms = req.body.text;
+	var channel = req.body.channel;
 
 	console.log('token: '+ req.body.token);
 
 	//check Slash Command token
-	if (req.query.token !== slashCommandToken) {
+	if (req.body.token !== slashCommandToken) {
     	return res.sendStatus(403);
   	}
 
