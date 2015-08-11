@@ -9,15 +9,15 @@ var app = express();
 //TO-DO: need to use multiparty module to process Slash command post
 
 //incoming webhook URL - put it here
-var incWebhook = '[your URL here]';
+var incWebhook = 'https://hooks.slack.com/services/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';
 
 //Slack slash command token - put it here
-var slashCommandToken = '[your team token here]]';
+var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
 
 //parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: 'your youtube API key here'
+  key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
 };
 
 app.post('/', function(req, res){
