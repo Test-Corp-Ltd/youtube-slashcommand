@@ -30,7 +30,7 @@ app.post('/', function(req, res){
 	var searchTerms = req.query.text;
 	var channel = req.query.channel;
 
-	console.log('token: '+ req.token);
+	console.log('token: '+ req.body.token);
 
 	//check Slash Command token
 	if (req.query.token !== slashCommandToken) {
