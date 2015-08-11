@@ -2,9 +2,13 @@ var request = require('request');
 var passport = require('passport-slack');
 var search = require('youtube-search');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 
 var app = express();
+
+// parse application/x-www-form-urlencoded 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //TO-DO: need to use multiparty module to process Slash command post
 
