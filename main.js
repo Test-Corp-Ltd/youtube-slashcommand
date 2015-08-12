@@ -25,14 +25,10 @@ app.post('/', function(req, res){
 	var searchTerms = req.body.text;
 	var channel = req.body.channel_id;
 
-	//check Slash Command token
+	//check Slash Command token - makes sure this request is coming from your team!
 	if (req.body.token !== slashCommandToken) {
     	return res.sendStatus(403);
   	}
-
-  	//some testings
-	console.log('search terms received: '+ searchTerms); 
-	console.log('channel received: '+ channel);
 
 	//search that shit
 	search(searchTerms, opts, function(err, results) {
@@ -41,21 +37,22 @@ app.post('/', function(req, res){
   			return res.sendStatus(500);
   		} 
  		
- 		//print search results to log if no error
-  		console.log('Here are the results from YouTube:'+ results);
+ 		//send to function to send incoming webhook to Slack
   		sendToSlack(results[0].link, channel);
 	});
 
-	//let Slack know everything went OK
-	//res.sendStatus(200);
 });
 
 //I'm listening
 app.listen(process.env.PORT || 3000);
 
-//sends request to Slack's postMessage method
+/** 
+	This function sends incoming webhook to Slack. An incoming webhook is used in order
+	for the slash command response to be a public message. If the content is included
+	directly in the slash command response it is only visible to the user who sent it.
+	Knowledge is power. 
+**/
 function sendToSlack (text, channel){
-	console.log('sendToSlack: ' + channel);
 
 	//get the appropriate params loaded up for request
 	var options = { method: 'POST',
@@ -66,12 +63,13 @@ function sendToSlack (text, channel){
      	  		payload: '{"text":"'+text+'","channel":"'+channel+'"}',
      	  	} 
      	};
-
- 	console.log('made it here!');
     
     //send the fucking thing 	
 	request(options, function (error, response, body) {
-  		if (error) throw new Error(error);
+  		if (error){ 
+  			throw new Error(error);
+  			console.log(err);
+  		}
 
   		console.log(body);
 	});
