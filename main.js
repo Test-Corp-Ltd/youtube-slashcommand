@@ -8,15 +8,15 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //incoming webhook URL - put it here
-var incWebhook = 'https://hooks.slack.com/services/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';
+var incWebhook = '[Incoming Webhook URL]';
 
 //Slack slash command token - put it here
-var slashCommandToken = '5OcY8DC1fHWLyWDLUxRTZNDe';
+var slashCommandToken = '[Slash Command token]';
 
 //parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: 'AIzaSyAdKvTWZmREliQAqhRigdYoFCo1NSbfMNE'
+  key: '[API key]'
 };
 
 app.post('/', function(req, res){
