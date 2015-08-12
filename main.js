@@ -1,16 +1,11 @@
 var request = require('request');
-var passport = require('passport-slack');
 var search = require('youtube-search');
 var express = require('express');
 var bodyParser = require('body-parser');
-
-
 var app = express();
 
 // parse application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-//TO-DO: need to use multiparty module to process Slash command post
 
 //incoming webhook URL - put it here
 var incWebhook = 'https://hooks.slack.com/services/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';
@@ -29,8 +24,6 @@ app.post('/', function(req, res){
 	//grab useful things from request
 	var searchTerms = req.body.text;
 	var channel = req.body.channel_id;
-
-	console.log('token: '+ req.body.token);
 
 	//check Slash Command token
 	if (req.body.token !== slashCommandToken) {
@@ -54,7 +47,7 @@ app.post('/', function(req, res){
 	});
 
 	//let Slack know everything went OK
-	res.sendStatus(200);
+	//res.sendStatus(200);
 });
 
 //I'm listening
