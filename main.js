@@ -28,7 +28,7 @@ app.post('/', function(req, res){
 
 	//grab useful things from request
 	var searchTerms = req.body.text;
-	var channel = req.body.channel;
+	var channel = req.body.channel_id;
 
 	console.log('token: '+ req.body.token);
 
@@ -62,7 +62,7 @@ app.listen(process.env.PORT || 3000);
 
 //sends request to Slack's postMessage method
 function sendToSlack (text, channel){
-	console.log('sendToSlack ' + channel);
+	console.log('sendToSlack: ' + channel);
 
 	//get the appropriate params loaded up for request
 	var options = { method: 'POST',
