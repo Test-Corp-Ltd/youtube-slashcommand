@@ -21,7 +21,7 @@ In the code you will see:
 ```
 var opts = {
   maxResults: 1,
-  key: '[API key]'
+  key: '[API key]';
 };
 ``` (YouTube API key)
 
