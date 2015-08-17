@@ -23,9 +23,9 @@ var opts = {
   maxResults: 1,
   key: '[API key]';
 };
-``` (YouTube API key)
+``` 
 
- You will have grabbed the required values while setting up your Slash command/incoming webhook/Google developer project. Replace the placeholders.
+You will have grabbed the required values while setting up your Slash command/incoming webhook/Google developer project. Replace the placeholders.
 
 ###Getting it hosted to you can use it
 An easy and fast way to do this is using Heroku. Youn find out more about this [here](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction).

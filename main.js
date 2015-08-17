@@ -16,7 +16,7 @@ var slashCommandToken = '[Slash Command token]';
 //parameters (AND API KEY) for the youtube search request
 var opts = {
   maxResults: 1,
-  key: '[API key]'
+  key: '[Youtube API key]'
 };
 
 app.post('/', function(req, res){
