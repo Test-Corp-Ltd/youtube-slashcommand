@@ -1,3 +1,7 @@
+/**
+	This is a simple Slash Command that allows you to search YouTube from Slack
+**/
+
 var request = require('request');
 var search = require('youtube-search');
 var express = require('express');
@@ -74,4 +78,3 @@ function sendToSlack (text, channel){
 
   		console.log(body);
 	});
-
