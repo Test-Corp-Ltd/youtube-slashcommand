@@ -19,6 +19,7 @@ var opts = {
   key: '[Youtube API key]'
 };
 
+//receives POST requests from Slack
 app.post('/', function(req, res){
 
 	//grab useful things from request
@@ -74,4 +75,3 @@ function sendToSlack (text, channel){
   		console.log(body);
 	});
 
-}
