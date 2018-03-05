@@ -1,6 +1,6 @@
 # /youtube Slash Command for Slack (Node.js/express)
 
-Search YouTube from within Slack using the **/youtube** slash command.
+Search YouTube from within Slack using the **/youtube** slash command. WOOOO
 
 ### Usage
 Just type `/youtube [SEARCH_TERMS]`
