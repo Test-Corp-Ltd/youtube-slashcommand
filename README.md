@@ -3,7 +3,7 @@
 Search YouTube from within Slack using the **/youtube** slash command. WOOOO
 
 ### Usage
-Just type `/youtube [SEARCH_TERMS]`
+Just type `/youtube [SEARCH_TERMS]` asdfasdasd
 
 ### Getting Started
 - Grab the code
