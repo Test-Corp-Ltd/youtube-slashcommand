@@ -11,7 +11,7 @@ Just type `/youtube [SEARCH_TERMS]`
 - Create an incoming webhook in Slack. You can do this [here](https://my.slack.com/services/new/incoming-webhook). There will be an incoming webhook URL which you will need in order to send messages back to Slack. Grab it.
 - You will also need to grab an API key for YouTube. Find out how to do this [here](https://developers.google.com/youtube/registering_an_application) .
 
-### Replacing the placeholders in the code
+### Replacing the placeholders in the code!!!
 In the code you will see: 
 
 `var incWebhook = '[Incoming Webhook URL]';`
