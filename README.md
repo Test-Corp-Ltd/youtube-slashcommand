@@ -12,7 +12,7 @@ Just type `/youtube [SEARCH_TERMS]`
 - You will also need to grab an API key for YouTube. Find out how to do this [here](https://developers.google.com/youtube/registering_an_application) .
 
 ### Replacing the placeholders in the code
-In the code you will see: 
+In the code you will see .   : 
 
 `var incWebhook = '[Incoming Webhook URL]';`
 
