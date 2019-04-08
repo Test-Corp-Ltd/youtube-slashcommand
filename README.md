@@ -5,7 +5,7 @@ Search YouTube from within Slack using the **/youtube** slash command. WOOOO
 ### Usage
 Just type `/youtube [SEARCH_TERMS]`
 
-### Getting Started!
+### Getting Started
 - Grab the code
 - You will need to set up a slash command in Slack. You can do that [here](https://my.slack.com/services/new/slash-commands). While setting this up you'll see the Slash Command token. Grab it.
 - Create an incoming webhook in Slack. You can do this [here](https://my.slack.com/services/new/incoming-webhook). There will be an incoming webhook URL which you will need in order to send messages back to Slack. Grab it.
